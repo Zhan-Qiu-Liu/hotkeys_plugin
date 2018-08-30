@@ -11,13 +11,13 @@ A plugin for adding hotkeys to improve productivity
 		- Ctrl+V => Paste
 
 	- Toolbar
-		E => Edit Contour
-		Alt+D(Hold) => Data Cursor
-		Plus => Zoom In
-		Minus => Zoom Out
-		Alt+P(Hold) => Pan
-		Alt+C(Hold) => Adjust Contrast
-		Alt+R(Hold) => 3d Rotation
+		- E => Edit Contour
+		- Alt+D(Hold) => Data Cursor
+		- Plus => Zoom In
+		- Minus => Zoom Out
+		- Alt+P(Hold) => Pan
+		- Alt+C(Hold) => Adjust Contrast
+		- Alt+R(Hold) => 3d Rotation
 
 	- Viewer
 		- Numpad Number => Switch Slice
