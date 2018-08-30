@@ -39,7 +39,7 @@ A plugin for adding hotkeys to improve productivity
 After installation of *DENSEanalysis*, run the following from the MATLAB command line:
 
 ```matlab
-plugins.PluginManager.import(https://github.com/MMoTH/Hotkeys_plugin)
+plugins.PluginManager.import('https://github.com/MMoTH/Hotkeys_plugin')
 ```
 
 ## Credits
