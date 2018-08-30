@@ -35,15 +35,18 @@ A plugin for adding hotkeys to improve productivity
 	- Middle Click => Drag Contours
 	- Right Click => Context Menu/Confirm
 			
+## Compatibility
+Compatible with [v0.5.0](https://github.com/denseanalysis/denseanalysis/blob/master/CHANGELOG) of [*DENSEanalysis*](https://github.com/denseanalysis/denseanalysis)
+
 ## Installation
-After installation of *DENSEanalysis*, run the following from the MATLAB command line:
+After installation of [*DENSEanalysis*](https://github.com/denseanalysis/denseanalysis), run the following from the MATLAB command line:
 
 ```matlab
 plugins.PluginManager.import('https://github.com/MMoTH/Hotkeys_plugin')
 ```
 
 ## Credits
-* This package was created using the windowkeypress function written by Dr. Jonathan Suever as a template.
+* This package was created with the [*denseanalysis_plugin_demo*](https://github.com/denseanalysis/denseanalysis_plugin_demo) project template.
 
 ## Known Bugs
 
