@@ -30,10 +30,10 @@ A plugin for adding hotkeys to improve productivity
 		- Tab => Switch Tab/Viewer
 		- Space => Playback
 
-	- Mouse
-		- Left Click => Drag Points on a Contour
-		- Middle Click => Drag Contours
-		- Right Click => Context Menu/Confirm
+- Mouse
+	- Left Click => Drag Points on a Contour
+	- Middle Click => Drag Contours
+	- Right Click => Context Menu/Confirm
 			
 ## Installation
 After installation of *DENSEanalysis*, run the following from the MATLAB command line:
