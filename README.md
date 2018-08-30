@@ -49,4 +49,5 @@ plugins.PluginManager.import(https://github.com/MMoTH/Hotkeys_plugin)
 
 ## Known Issues
 1.Error in plugins.PluginMenu/checkAvailability
+
 Temperal Solution: Disable checkAvailability
