@@ -1,0 +1,9 @@
+{
+	"package": "hotkeys_plugin",
+	"version": "0.1.0",
+	"description": "A plugin for adding Hotkeys",
+	"name": "Hotkeys",
+	"author": "Zhanqiu Liu",
+	"email": "lafeir.lew@gmail.com",
+	"url": "https:\/\/github.com\/MMoTH\/Hotkeys_plugin"
+}
