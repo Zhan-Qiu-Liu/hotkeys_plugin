@@ -3,7 +3,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
     %
     %   A plugin for adding Hotkeys
     %
-    % This is a extension of the windowkeypress function written by Dr. Jonathan Suever
+	% This package was created using the windowkeypress function written by Dr. Jonathan Suever as a template.
 	% 
 	% Modified By: Zhanqiu Liu (lafeir.lew@gmail.com)
 	% Last Modified: 10:20 July 12, 2017
@@ -38,7 +38,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
             % set(findobj(handles.hfig, 'tag', 'menu_saveas'), 'Callback', @(s,e)saveFcnREPL(handles,true));
 			
 			%% Add toolbar items
-			cdata = load([self.InstallDir,'\icons.mat'],'-mat');
+			cdata = load(fullfile(self.InstallDir,'icons.mat'),'-mat');
 			htoolbar = get(findall(handles.hfig, 'tag', 'tool_new'), 'Parent');
 			% button = get(findall(handles.hfig, 'type', 'uitoolbar'),'tag');
 			% htoolbar = get(get(findall(handles.hfig, 'type', 'uitoolbar'),'tag', 'tool_new'), 'Parent');
@@ -208,6 +208,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
 end
 
 function windowkeypressREPL(src,evnt)
+% This package was created using the windowkeypress function (https://github.com/denseanalysis/denseanalysis/blob/master/DENSEanalysis.m) written by Dr. Jonathan Suever as a template.
 % Copyright (c) 2016 DENSEanalysis Contributors
 % Last Modified: 8:37 PM Friday, November 20, 2015
 % Modified By: Zhanqiu Liu (lafeir.lew@gmail.com)

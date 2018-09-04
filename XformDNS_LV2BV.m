@@ -19,8 +19,8 @@ function XformDNS_LV2BV(button,config,self)
 	
 	%% DIRECTORY LOAD: default inputs
 	homepath = char(java.lang.System.getProperty('user.home'));
-	pathDNS = [homepath,'\Dropbox\Analysis']%Directory where DNS stored by default
-	pathMAT = [homepath,'\Dropbox\MAT']%Directory where DENSE2D outputs(post-analyzed .MAT) stored by default
+	pathDNS = fullfile(homepath,'Dropbox\Analysis')%Directory where DNS stored by default
+	pathMAT = fullfile(homepath,'Dropbox\MAT')%Directory where DENSE2D outputs(post-analyzed .MAT) stored by default
 
 	if ~exist('button','var')
 		button = input('Press any key for using a User Interface to select Datasets of interest.\nOtherwise leave it blank!\n','s');
@@ -148,7 +148,7 @@ function XformDNS_LV2BV(button,config,self)
 	
 	for ii = 1 : nFiles
 		%% test:
-		% t1 = load([homepath,'\Dropbox\Analysis\','20150628.dns'],'-mat');
+		% t1 = load(fullfile(homepath,'Dropbox','Analysis','20150628.dns'),'-mat');
 		load(inFiles{ii},'-mat');
 		if ~all(cellfun(@(x)exist(x,'var'),{'seq','img','dns','roi'}))
 			msgbox('".dns" file does not contain the necessary information');
@@ -164,13 +164,13 @@ function XformDNS_LV2BV(button,config,self)
 			error('Variable "status" NOT exist!');
 			msgbox(['The length of inFile name ',files{ii},' is NOT supported! Supported length > 7 OR == 4'],'s');
 		end
-		pathPostMAT = [pathMAT,'\',files{ii}(1:idx)];
+		pathPostMAT = fullfile(pathMAT,files{ii}(1:idx));
 		if exist(pathPostMAT,'dir')
 			MagIndex = reshape([dns.MagIndex],3,[]);MagIndex = MagIndex(1,:);
 			tmp = dir(pathPostMAT);
 			tmp = {tmp.name};
 			%% DENSEanalysis(v0.5) cannot save variable "status"
-			pathDNSori = [pathDNS,'\',files{ii}(1:idx),'.dns'];
+			pathDNSori = fullfile(pathDNS,[files{ii}(1:idx),'.dns']);
 			if (~exist('status','var') || isempty(status.SOI)) && exist(pathDNSori,'file')
 				try
 					load(pathDNSori,'status','-mat');
@@ -185,11 +185,11 @@ function XformDNS_LV2BV(button,config,self)
 			if exist('status','var') && ~isempty(status.SOI)
 				tmp2 = dns(status.SOI(1)).Name;
 				tmp1 = find(strncmpi(tmp, tmp2, numel(tmp2)));	
-				pathAnalysisMAT = [pathPostMAT,'\',tmp{tmp1(1)}];
+				pathAnalysisMAT = fullfile(pathPostMAT,tmp{tmp1(1)});
 			else
 				tmp1 = strncmpi(tmp, 'auto.', 5);
 				tmp2 = find(tmp1);
-				pathAnalysisMAT = [pathPostMAT,'\',tmp{tmp2(ceil(sum(tmp1)/2))}];
+				pathAnalysisMAT = fullfile(pathPostMAT,tmp{tmp2(ceil(sum(tmp1)/2))});
 				% msgbox('Variable "status" NOT exist!','s');
 				% return
 			end
@@ -224,7 +224,7 @@ function XformDNS_LV2BV(button,config,self)
 		for jj = idx
 		% for jj = find(idx)
 			roiName = [dns(MagIndex == roi(jj).SeqIndex(1)).Name,'_',roi(jj).Name];
-			pathAnalysisMAT = [pathPostMAT,'\',roiName,'.mat'];
+			pathAnalysisMAT = fullfile(pathPostMAT,[roiName,'.mat']);
 			if ~exist(pathAnalysisMAT,'file')
 				[uifile, uipath] = uigetfile({'*.mat','DENSE2D(v0.4) outputs(post-analyzed *.MAT)'},['Select MAT file for SA ROI:',roiName,' of the input:',files{ii}],pathPostMAT);
 				if isequal(uipath,0) || isequal(uifile,0)
@@ -571,7 +571,7 @@ axis equal;
 		if strwcmpi(fname,'*_v05')
 			outFiles{ii} = inFiles{ii}
 		else
-			outFiles{ii} = [pathDNS,'\',fname,'_v05.dns'];
+			outFiles{ii} = fullfile(pathDNS,[fname,'_v05.dns']);
 		end
 		
 		if nFiles == 1
