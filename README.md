@@ -1,6 +1,5 @@
 # Hotkeys Plugin
-
-A plugin for adding hotkeys to improve productivity when using [*DENSEanalysis*](https://github.com/denseanalysis/denseanalysis)
+[*DENSEanalysis*](https://github.com/denseanalysis/denseanalysis) affiliate plugin for adding hotkeys to improve productivity
 
 ## Features
 - Keyboard

@@ -9,6 +9,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
 	% Last Modified: 10:20 July 12, 2017
     properties
         Handles
+		aside = [];
     end
 	
     methods
@@ -97,7 +98,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
 			Parent = get(Parent, 'Parent');
 			self.Handles.menu_append = uimenu('Parent', Parent, 'Label', 'Plugin_Hotkeys');
 			uimenu('Parent', self.Handles.menu_append, 'Label', 'Important Dataset Info.', 'Callback', @(s,e)DatasetInfo(handles),'Accelerator','I');
-			uimenu('Parent', self.Handles.menu_append, 'Label', 'Auto-build:SA RVendo(LVendo+epi required)', 'Callback', @(s,e)XformDNS_LV2BV(true,fullfile(get(handles.config,'locations.matpath',userdir()),get(handles.config, 'locations.matfile',userdir())),self),'Accelerator','B');%'DENSEanalysis workspace v0.4->v0.5'
+			% uimenu('Parent', self.Handles.menu_append, 'Label', 'Auto-build:SA RVendo(LVendo+epi required)', 'Callback', @(s,e)XformDNS_LV2BV(true,fullfile(get(handles.config,'locations.matpath',userdir()),get(handles.config, 'locations.matfile',userdir())),self),'Accelerator','B');%'DENSEanalysis workspace v0.4->v0.5'
 			% uimenu('Parent', self.Handles.menu_append, 'Label', 'Auto-build:SA Epi(BV required)', 'Callback', @(s,e)XformDNS_BV2Epi(true,fullfile(get(handles.config,'locations.matpath',userdir()),get(handles.config, 'locations.matfile',userdir())),self),'Accelerator','E');
 			%{ 
 			% NO PERMISSION for DENSEviewer.m and DENSEdata.m:
