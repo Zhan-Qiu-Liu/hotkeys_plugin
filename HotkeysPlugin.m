@@ -30,7 +30,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
 			set(handles.hfig, 'WindowKeyPressFcn', @windowkeypressREPL)
 
 			%% Remap for all menu click events
-            set(findobj(handles.hfig, 'tag', 'menu_runanalysis'),'Accelerator','A');
+            % set(findobj(handles.hfig, 'tag', 'menu_runanalysis'),'Accelerator','A');
             % Now remap some of the callbacks to our desired functions
 			% NOT Working: load without selection GUI
             % set(findobj(handles.hfig, 'tag', 'menu_open'), 'Callback', @(s,e)openFcnREPL(handles));
