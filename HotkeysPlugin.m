@@ -9,7 +9,7 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
 	% Last Modified: 10:20 July 12, 2017
     properties
         Handles
-		aside = [];
+		% aside = [];
     end
 	
     methods
