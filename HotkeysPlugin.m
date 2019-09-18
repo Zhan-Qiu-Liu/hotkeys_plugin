@@ -97,7 +97,8 @@ classdef HotkeysPlugin < plugins.DENSEanalysisPlugin
 			% parent = get(findall(handles.hfig, 'tag', 'menu_file'), 'Parent');
 			Parent = get(Parent, 'Parent');
 			self.Handles.menu_append = uimenu('Parent', Parent, 'Label', 'Plugin_Hotkeys');
-			uimenu('Parent', self.Handles.menu_append, 'Label', 'Important Dataset Info.', 'Callback', @(s,e)DatasetInfo(handles),'Accelerator','I');
+			uimenu('Parent', self.Handles.menu_append, 'Label', 'Important Dataset Info.', 'Callback', @(s,e)DatasetInfo(handles,false),'Accelerator','I');
+			uimenu('Parent', self.Handles.menu_append, 'Label', 'DENSE Info. in Dataset', 'Callback', @(s,e)DatasetInfo(handles,true));
 			% uimenu('Parent', self.Handles.menu_append, 'Label', 'Auto-build:SA RVendo(LVendo+epi required)', 'Callback', @(s,e)XformDNS_LV2BV(true,fullfile(get(handles.config,'locations.matpath',userdir()),get(handles.config, 'locations.matfile',userdir())),self),'Accelerator','B');%'DENSEanalysis workspace v0.4->v0.5'
 			% uimenu('Parent', self.Handles.menu_append, 'Label', 'Auto-build:SA Epi(BV required)', 'Callback', @(s,e)XformDNS_BV2Epi(true,fullfile(get(handles.config,'locations.matpath',userdir()),get(handles.config, 'locations.matfile',userdir())),self),'Accelerator','E');
 			%{ 
