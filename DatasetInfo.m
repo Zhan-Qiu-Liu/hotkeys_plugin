@@ -34,6 +34,7 @@ function DatasetInfo(handles,dense)
 			DENSE(ii).SeriesNumber = handles.hdata.seq(idx(ii)).SeriesNumber;
 			DENSE(ii).SeriesDescription = handles.hdata.seq(idx(ii)).SeriesDescription;%ProtocolName
 			DENSE(ii).EncFreq = handles.hdata.seq(idx(ii)).DENSEdata.EncFreq;
+			DENSE(ii).Scale = handles.hdata.seq(idx(ii)).DENSEdata.Scale;
 			DENSE(ii).PixelSpacing=handles.hdata.seq(idx(ii)).PixelSpacing;
 			DENSE(ii).SliceThickness=handles.hdata.seq(idx(ii)).SliceThickness;
 			DENSE(ii).NumberOfAverages=handles.hdata.seq(idx(ii)).NumberOfAverages;
